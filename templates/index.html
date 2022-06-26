@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block body%}
+
+        <marquee behavior="" direction="left">rohan</marquee>
+        <div class="news-section">
+
+            <div class="news">
+                {% for index, news in top %}
+                {% if index == 0 %}
+                <a href="{{news.url}}">
+                <div class="bgcolor">
+                    <div class="img">
+                        <img src="{{news.urlToImage}}" alt="">
+                    </div>
+                    <div class="data">
+                        <h1>{{news.title}}</h1>
+                        {{news.description}}
+                        
+                        
+                    </div>
+                </div>
+            </a>
+                {% endif %}
+                
+                {% endfor %}
+
+                <h1>Technology</h1>
+                <div class="top-stories">
+                    
+                    {% for index,news in tech  %} 
+                    {% if index <= 3 %}
+                    <div class="box bgcolor">
+                        <div class="continer">
+                            <a href="{{news.url}}">
+                            <div class="img">
+                                <img src="{{news.urlToImage}}" alt="">
+                            </div>
+                            <div class="cont-data">
+                                <h1>{{news.title}}</h1>
+                                <p>{{news.description}}</p>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    
+
+
+                </div>
+
+                <div class="LATEST-NEWS">
+                    <h1>LATEST NEWS</h1>
+
+                </div>
+                {% for index,data in LATEST %}
+                {% if index >= 6 %}
+                <a href="{{news.url}}">
+
+                        <div class="letest bgcolor">
+                            <div class="news-img">
+                                <img src="{{data.urlToImage}}" alt="">
+                            </div>
+                            <div class="news-data">
+                                <h3>{{data.title}}</h3>
+                                <p>{{data.description|slice:400}}</p>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                {% endif %}
+                {% endfor %}
+
+
+            </div>
+
+            <div class="top-stories">
+
+            </div>
+        </div>
+    </main>
+    {% endblock body %}
+
+    

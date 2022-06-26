@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+{% for data in search %}
+
+<div class="news-section">
+
+<div class="news">
+
+<a href="{{data.url}}" target="_blank">
+
+        <div class="letest bgcolor">
+            <div class="news-img">
+                <img src="{{data.urlToImage}}" alt="">
+            </div>
+            <div class="news-data">
+                <h3>{{data.title}}</h3>
+                <p>{{data.description|slice:400}}</p>
+                
+            </p>
+        </div>
+    </div>
+</a>
+</div>
+</div>
+{% endfor %}
+{% endblock body %}

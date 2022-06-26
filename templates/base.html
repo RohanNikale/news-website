@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    <link rel="stylesheet" href="{%static 'media.css'%}">
+    <title>News7</title>
+</head>
+
+<body>
+    <!-- <div class="social">
+        Follow us<br>
+        <div class="icon">
+
+          <a href="https://www.facebook.com/rohan.nikale.52"> <i class="fa fa-facebook-official" aria-hidden="true"></i></a> <a href="https://www.instagram.com/rohan_nikale7/?hl=en"><i class="fa fa-instagram"
+                aria-hidden="true"></i></a><a href="https://twitter.com/rohan_nikale"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        </div>
+    </div> -->
+      <div class="top">
+    <a href="/"style="color: black;"> <i class="fa fa-newspaper-o" aria-hidden="true" style="color:red; font-size: 3rem;"></i> &nbsp;&nbsp;<h1>
+             News7</a>
+        </h1>
+    </div>
+    <main>
+
+        <nav>
+            <div class="nav">
+                <div class="logo">
+                    <a href="/"style="text-decoration:none;">
+
+                    <font color="red" style="font-weight: bold; font-size: large;"> News7 </font>
+                    </a>
+                </div>
+                <div class="nav-item">
+                    <ul>
+                        <a href="/"style="text-decoration:none;">
+                            <li>Home</li>
+                        </a>
+                        <a href="https://rohannikale.herokuapp.com/" style="text-decoration:none;"target="_blank">
+                            <li>Portfolio</li>
+                        </a>
+                        <a href="https://sayopenly.herokuapp.com/"style="text-decoration:none;" target="_blank">
+                            <li>BLOG</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <form action="news" method="GET">
+
+            <div class="search">
+
+                <input type="text" name="search" placeholder="Search..."><input type="submit" value="search">
+            </div>
+        </form>
+        {% block body %}
+        {% endblock body %}
+
+        <br>
+        <br>
+
+        <footer class="footer-distributed">
+
+            <div class="footer-left">
+
+                <h3>THE<span>News7</span></h3>
+
+                <p class="footer-links">
+                    <a href="/">Home</a>
+                    ·
+                    <a href="https://sayopenly.herokuapp.com/">Blog</a>
+                    ·
+                    <a href="https://rohannikale.herokuapp.com/">Portfolio</a>
+                    ·
+      
+                </p>
+
+                <p style="color: white;"class="footer-company-name">Copyright© 2022. All Rights Reserved By<a href="https://github.com/RohanNikale" style="color: white;"> Rohan Nikale </a>&nbsp;&nbsp;&nbsp; News retrieved by <a href="https://newsapi.org/" style="color: white;"> newsapi.org/</a></p>
+                <br>
+                News retrieved by News API
+
+                <div class="footer-icons">
+    
+                    <a href="https://www.facebook.com/rohan.nikale.52"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/rohan_nikale7/?hl=en"><i class="fa fa-instagram"aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/rohan_nikale"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/rohan-nikale-a1a1b922a/"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://github.com/RohanNikale"><i class="fa fa-github"></i></a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-right">
+
+                <p>Contact Us</p>
+
+                <form action="/" method="POST">
+{% csrf_token %}
+                    <input type="text" name="email" placeholder="Email">
+                    <textarea name="message" placeholder="Message"></textarea>
+                    <button>Send</button>
+
+                </form>
+
+            </div>
+
+        </footer>
+</body>
+
+</html>
